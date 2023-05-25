@@ -121,6 +121,7 @@ header img {
     height: 1024px;
     background-size: 2000px 2700px;
     background-image: url(../img/image.jpg);
+    background-position: top right;
 }
 
 .content-image {
@@ -135,6 +136,7 @@ header img {
     height: 1024px;
     background-size: 2000px 2700px;
     background-image: url(../img/audio.jpg);
+    background-position: left top;
 }
 
 .content-audio {
