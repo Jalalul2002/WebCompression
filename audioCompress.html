@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Compression</title>
+    <title>Audio Compression</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,11 +17,15 @@
         <div class="content-audio">
             <div class="content-box">
                 <h2>Audio Compression</h2>
-                <input type="file" name="audio" id="audio">
+                <input type="file" name="inputAudio" id="inputAudio" accept="audio/*">
                 <br>
-                <button type="submit" class="btn-compress-audio">Compress</button>
+                <button type="submit" class="btn-compress-audio" id="compressAudio">Compress</button>
+                <a id="downloadLink" style="display: none;">Download Compressed Audio</a>
             </div>
         </div>
     </div>
+
+
+    <script src="script/audioCompress.js"></script>
 </body>
 </html>
