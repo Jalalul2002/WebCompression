@@ -19,7 +19,7 @@ h1 {
 
 h3 {
     font-weight: 800;
-    font-size: 26px;
+    font-size: 30px;
     line-height: 52px;
     color: #272850;
     margin-top: -40px;
@@ -150,7 +150,7 @@ header img {
     width: 720px;
     background: #FFFFFF;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 25px;
+    border-radius: 20px;
     margin: auto;
     padding: 20px;
     text-align: center;
@@ -190,30 +190,45 @@ input {
     cursor: pointer;
 }
 
-.btn-compress-audio {
+.btn-record {
     margin-top: 15px;
-    width: 635px;
+    margin-right: 5px;
+    width: 350px;
     padding: 25px;
     font-size: 20px;
     background: #33c7d1;
-    border-radius: 20px;
+    border-radius: 10px;
     font-weight: 600;
     color: #FFFFFF;
     cursor: pointer;
 }
 
-.btn-compress-audio:hover {
-    width: 635px;
+.btn-stop {
     margin-top: 15px;
+    margin-left: 5px;
+    width: 350px;
     padding: 25px;
     font-size: 20px;
-    background: #23b5c0;
-    border-radius: 20px;
+    background: #d13395;
+    border-radius: 10px;
     font-weight: 600;
     color: #FFFFFF;
     cursor: pointer;
+}
+
+p {
+    font-size: 18px;
+}
+
+span {
+    font-size: 18px;
 }
 
 canvas {
     margin-bottom: 50px;
+}
+
+.download-box {
+    padding: 5px 5px;
+    text-align: right;
 }

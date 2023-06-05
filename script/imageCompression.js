@@ -1,4 +1,4 @@
-// Menentukan ukuran maksimum
+// Ukuran dan Tipe MIME
 const MAX_WIDTH = 1920;
 const MAX_HEIGHT = 1080;
 const MIME_TYPE = "image/jpeg";
@@ -7,18 +7,18 @@ const QUALITY = 0.7;
 const input = document.getElementById("imageInput");
 input.onchange = function (ev) {
   const file = ev.target.files[0]; // get the file
-  const blobURL = URL.createObjectURL(file);
+  const blobURL = URL.createObjectURL(file); // URL BLOB
   const img = new Image();
   img.src = blobURL;
   img.onerror = function () {
-    URL.revokeObjectURL(this.src);
-    // Handle the failure properly
+    URL.revokeObjectURL(this.src); //Clean BLOB
+    // Log Eror
     console.log("Cannot load image");
   };
   img.onload = function () {
     URL.revokeObjectURL(this.src);
     const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
-    const canvas = document.createElement("canvas");
+    const canvas = document.createElement("canvas"); // canvas image hasil kompres
     canvas.width = newWidth;
     canvas.height = newHeight;
     canvas.style.width = "320px";
@@ -27,11 +27,11 @@ input.onchange = function (ev) {
     ctx.drawImage(img, 0, 0, newWidth, newHeight);
     canvas.toBlob(
       (blob) => {
-        // Handle the compressed image. es. upload or save in local state
+        // Handle untuk hasil kompres disimpan di lokal
         displayInfo('Original file', file);
         displayInfo('Compressed file', blob);
         
-        // Create a download link for the compressed image
+        // download link haisl kompres
         const downloadLink = document.createElement('a');
         downloadLink.href = URL.createObjectURL(blob);
         downloadLink.download = 'compressed_image.jpg';
@@ -45,11 +45,12 @@ input.onchange = function (ev) {
   };
 };
 
+// Fungsi kalkulasi ukuran baru
 function calculateSize(img, maxWidth, maxHeight) {
   let width = img.width;
   let height = img.height;
 
-  // calculate the width and height, constraining the proportions
+  // menghitung ukuran file
   if (width > height) {
     if (width > maxWidth) {
       height = Math.round((height * maxWidth) / width);
@@ -64,7 +65,7 @@ function calculateSize(img, maxWidth, maxHeight) {
   return [width, height];
 }
 
-// Utility functions for demo purpose
+//Fungsi tambahan untuk info ukuran hasil kompresi
 
 function displayInfo(label, file) {
   const p = document.createElement('h3');
